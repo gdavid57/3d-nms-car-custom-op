@@ -5,7 +5,8 @@ sh_binary(
         "LICENSE",
         "MANIFEST.in",
         "setup.py",
-        "//tensorflow_zero_out:zero_out_py",
-        "//tensorflow_time_two:time_two_py",
+        "//crop_and_resize_3d:crop_and_resize_3d_py",
+        "//crop_and_resize_3d_grad_boxes:crop_and_resize_3d_grad_boxes_py",
+        "//crop_and_resize_3d_grad_image:crop_and_resize_3d_grad_image_py",
     ],
 )
