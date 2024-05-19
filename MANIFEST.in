@@ -1,3 +1,4 @@
 recursive-include crop_and_resize_3d *.so
 recursive-include crop_and_resize_3d_grad_boxes *.so
 recursive-include crop_and_resize_3d_grad_image *.so
+recursive-include non_max_suppression_3d *.so
