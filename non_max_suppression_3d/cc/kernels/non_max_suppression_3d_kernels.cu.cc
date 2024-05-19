@@ -18,7 +18,7 @@ limitations under the License.
 
 #include "non_max_suppression_3d.h"
 #include "tensorflow/core/util/gpu_kernel_helper.h"
-#include "third_party/cub/cub.cuh"
+#include "external/cub_archive/_virtual_includes/cub/third_party/cub/cub.cuh"
 
 #define TF_RETURN_IF_CUDA_ERROR(result)                   \
   do {                                                    \
