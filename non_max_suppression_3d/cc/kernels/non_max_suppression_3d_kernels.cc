@@ -1,4 +1,4 @@
-#include "non_max_suppression_3d.h"
+#include "non_max_suppression_3d_kernels.h"
 
 #include <cmath>
 #include <functional>
