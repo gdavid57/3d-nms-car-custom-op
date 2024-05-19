@@ -1,7 +1,7 @@
 #include "tensorflow/core/framework/op_kernel.h"
+#include "tensorflow/core/framework/bounds_check.h"
 
 using namespace tensorflow;
-using ::tensorflow::bounds_check::SubtleMustCopy;
 
 static inline Status ParseAndCheckBoxSizes(const Tensor& boxes,
                                            const Tensor& box_index,
@@ -71,9 +71,9 @@ public:
                                 crop_size.shape().DebugString()));
 
     auto crop_size_vec = crop_size.vec<int32>();
-    const int crop_height = SubtleMustCopy(crop_size_vec(0));
-    const int crop_width = SubtleMustCopy(crop_size_vec(1));
-    const int crop_depth = SubtleMustCopy(crop_size_vec(2));
+    const int crop_height = ::bounds_check::SubtleMustCopy(crop_size_vec(0));
+    const int crop_width = ::bounds_check::SubtleMustCopy(crop_size_vec(1));
+    const int crop_depth = ::bounds_check::SubtleMustCopy(crop_size_vec(2));
     OP_REQUIRES(
         context, crop_height > 0 && crop_width > 0 && crop_depth > 0,
         errors::InvalidArgument("crop dimensions must be positive"));
