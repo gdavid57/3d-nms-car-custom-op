@@ -57,33 +57,8 @@ while [[ "$TF_NEED_CUDA" == "" ]]; do
   esac
 done
 
-# Check if we are building against manylinux1 or manylinux2010 pip package,
-# default manylinux2010
-if is_windows; then
-  echo "On windows, skipping toolchain flags.."
-  PIP_MANYLINUX2010=0
-else
-  while [[ "$PIP_MANYLINUX2010" == "" ]]; do
-    read -p "Does the pip package have tag manylinux2010 (usually the case for nightly release after Aug 1, 2019, or official releases past 1.14.0)?. Y or enter for manylinux2010, N for manylinux1. [Y/n] " INPUT
-    case $INPUT in
-      [Yy]* ) PIP_MANYLINUX2010=1;;
-      [Nn]* ) PIP_MANYLINUX2010=0;;
-      "" ) PIP_MANYLINUX2010=1;;
-      * ) echo "Invalid selection: " $INPUT;;
-    esac
-  done
-fi
-
-while [[ "$TF_CUDA_VERSION" == "" ]]; do
-  read -p "Are you building against TensorFlow 2.1(including RCs) or newer?[Y/n] " INPUT
-  case $INPUT in
-    [Yy]* ) echo "Build against TensorFlow 2.1 or newer."; TF_CUDA_VERSION=10.1;;
-    [Nn]* ) echo "Build against TensorFlow <2.1."; TF_CUDA_VERSION=10.0;;
-    "" ) echo "Build against TensorFlow 2.1 or newer."; TF_CUDA_VERSION=10.1;;
-    * ) echo "Invalid selection: " $INPUT;;
-  esac
-done
-
+PIP_MANYLINUX2010=1
+TF_CUDA_VERSION=10.1
 
 # CPU
 if [[ "$TF_NEED_CUDA" == "0" ]]; then

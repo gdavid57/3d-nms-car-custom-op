@@ -1,0 +1,1 @@
+from non_max_suppression_3d.python.ops.non_max_suppression_3d_ops import non_max_suppression_3d

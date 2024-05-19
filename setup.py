@@ -23,11 +23,11 @@ from setuptools import setup
 from setuptools.dist import Distribution
 
 
-__version__ = '0.0.1'
+__version__ = '0.1.0'
 REQUIRED_PACKAGES = [
     'tensorflow >= 2.1.0',
 ]
-project_name = 'tensorflow-custom-ops'
+project_name = 'tensorflow-nms-car-3d'
 
 
 from setuptools.command.install import install
@@ -49,9 +49,9 @@ class BinaryDistribution(Distribution):
 setup(
     name=project_name,
     version=__version__,
-    description=('tensorflow-custom-ops is an examples for custom ops for TensorFlow'),
-    author='Google Inc.',
-    author_email='opensource@google.com',
+    description=('3D Non Max Suppression and Crop And Resize for TensorFlow 2.3.'),
+    author='Gabriel David (PhD)',
+    author_email='gabriel.david57@proton.me',
     # Contained modules and scripts.
     packages=find_packages(),
     install_requires=REQUIRED_PACKAGES,
@@ -76,5 +76,5 @@ setup(
         'Topic :: Software Development :: Libraries',
     ],
     license='Apache 2.0',
-    keywords='tensorflow custom op machine learning',
+    keywords='tensorflow custom op machine learning non max suppression crop and resize',
 )

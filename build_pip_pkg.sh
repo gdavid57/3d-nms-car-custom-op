@@ -69,7 +69,8 @@ function main() {
   cp ${PIP_FILE_PREFIX}LICENSE "${TMPDIR}"
   rsync -avm -L --exclude='*_test.py' ${PIP_FILE_PREFIX}crop_and_resize_3d "${TMPDIR}"
   rsync -avm -L --exclude='*_test.py' ${PIP_FILE_PREFIX}crop_and_resize_3d_grad_boxes "${TMPDIR}"
-    rsync -avm -L --exclude='*_test.py' ${PIP_FILE_PREFIX}crop_and_resize_3d_grad_image "${TMPDIR}"
+  rsync -avm -L --exclude='*_test.py' ${PIP_FILE_PREFIX}crop_and_resize_3d_grad_image "${TMPDIR}"
+  rsync -avm -L --exclude='*_test.py' ${PIP_FILE_PREFIX}non_max_suppression_3d "${TMPDIR}"
 
   pushd ${TMPDIR}
   echo $(date) : "=== Building wheel"
