@@ -17,7 +17,17 @@ limitations under the License.
 #define EIGEN_USE_GPU
 
 #include "non_max_suppression_3d.h"
+#include <limits>
+
+#include "absl/strings/str_cat.h"
+#include "third_party/eigen3/unsupported/Eigen/CXX11/Tensor"
+#include "tensorflow/core/framework/numeric_types.h"
+#include "tensorflow/core/framework/op_kernel.h"
+#include "tensorflow/core/framework/tensor_types.h"
+#include "tensorflow/core/kernels/gpu_prim.h"
 #include "tensorflow/core/util/gpu_kernel_helper.h"
+#include "tensorflow/core/util/gpu_launch_config.h"
+#include "tensorflow/stream_executor/stream_executor.h"
 
 #define TF_RETURN_IF_CUDA_ERROR(result)                   \
   do {                                                    \
