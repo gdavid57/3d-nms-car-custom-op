@@ -1,6 +1,7 @@
 #include "tensorflow/core/framework/op_kernel.h"
 
 using namespace tensorflow;
+using ::tensorflow::bounds_check::SubtleMustCopy;
 
 static inline Status ParseAndCheckBoxSizes(const Tensor& boxes,
                                            const Tensor& box_index,
