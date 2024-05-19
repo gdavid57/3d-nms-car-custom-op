@@ -16,7 +16,7 @@ limitations under the License.
 #if GOOGLE_CUDA
 #define EIGEN_USE_GPU
 
-#include "non_max_suppression_3d_kernels.h"
+#include "non_max_suppression_3d.h"
 #include "tensorflow/core/util/gpu_kernel_helper.h"
 
 #define TF_RETURN_IF_CUDA_ERROR(result)                   \
