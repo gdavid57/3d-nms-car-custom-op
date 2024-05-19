@@ -50,3 +50,16 @@ py_test(
     ],
     srcs_version = "PY2AND3",
 )
+
+py_library(
+    name = "crop_and_resize_3d_grad_image_py",
+    srcs = ([
+        "__init__.py",
+        "python/__init__.py",
+        "python/ops/__init__.py",
+    ]),
+    deps = [
+        ":crop_and_resize_3d_grad_image_ops_py"
+    ],
+    srcs_version = "PY2AND3",
+)
