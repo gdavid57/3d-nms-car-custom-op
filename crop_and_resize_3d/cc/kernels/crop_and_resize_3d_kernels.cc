@@ -71,9 +71,9 @@ public:
                                 crop_size.shape().DebugString()));
 
     auto crop_size_vec = crop_size.vec<int32>();
-    const int crop_height = ::bounds_check::SubtleMustCopy(crop_size_vec(0));
-    const int crop_width = ::bounds_check::SubtleMustCopy(crop_size_vec(1));
-    const int crop_depth = ::bounds_check::SubtleMustCopy(crop_size_vec(2));
+    const int crop_height = ::tensorflow::bounds_check::SubtleMustCopy(crop_size_vec(0));
+    const int crop_width = ::tensorflow::bounds_check::SubtleMustCopy(crop_size_vec(1));
+    const int crop_depth = ::tensorflow::bounds_check::SubtleMustCopy(crop_size_vec(2));
     OP_REQUIRES(
         context, crop_height > 0 && crop_width > 0 && crop_depth > 0,
         errors::InvalidArgument("crop dimensions must be positive"));
