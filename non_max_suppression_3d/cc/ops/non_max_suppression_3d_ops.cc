@@ -28,3 +28,5 @@ REGISTER_OP("NonMaxSuppression3D")
       c->set_output(0, c->Vector(c->UnknownDim()));
       return Status::OK();
     });
+
+}
