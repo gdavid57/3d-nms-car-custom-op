@@ -9,15 +9,6 @@ config_setting(
 )
 
 cc_library(
-    name = "cub",
-    hdrs = if_cuda([":cub_header_files"]),
-    include_prefix = "third_party",
-    deps = [
-        "@local_config_cuda//cuda:cuda_headers",
-    ],
-)
-
-cc_library(
     name = "cuda",
     data = [
         "@local_config_cuda//cuda:cudart",
@@ -41,6 +32,7 @@ cc_library(
 cc_library(
     name = "non_max_suppression_3d_ops_gpu",
     srcs = ["cc/kernels/non_max_suppression_3d.h", "cc/kernels/non_max_suppression_3d_kernels.cu.cc"],
+    include_prefix = "third_party",
     deps = [
         "@local_config_tf//:libtensorflow_framework",
         "@local_config_tf//:tf_header_lib",
