@@ -1,6 +1,8 @@
 #include "non_max_suppression_3d.h"
 #include "tensorflow/core/framework/op_kernel.h"
 
+namespace tensorflow {
+  
 namespace functor {
 
 template <typename Device, typename T>
