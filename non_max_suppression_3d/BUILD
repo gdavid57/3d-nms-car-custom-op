@@ -9,6 +9,12 @@ config_setting(
 )
 
 cc_library(
+    name = "cub",
+    hdrs = glob(["cub/**"]),
+    deps = ["@local_config_cuda//cuda:cuda_headers"],
+)
+
+cc_library(
     name = "cuda",
     data = [
         "@local_config_cuda//cuda:cudart",
@@ -35,7 +41,7 @@ cc_library(
     deps = [
         "@local_config_tf//:libtensorflow_framework",
         "@local_config_tf//:tf_header_lib",
-        "@local_config_tf//third_party",
+        "@local_config_cuda//:cub",
     ] + if_cuda_is_configured([":cuda",  "@local_config_cuda//cuda:cuda_headers"]),
     alwayslink = 1,
     linkopts = [],
