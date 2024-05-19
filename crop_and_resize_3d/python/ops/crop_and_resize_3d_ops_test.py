@@ -3,10 +3,7 @@ import numpy as np
 import tensorflow as tf
 from scipy import interpolate
 
-try:
-  from crop_and_resize_3d.python.ops.crop_and_resize_3d_ops import crop_and_resize_3d
-except ImportError:
-  from crop_and_resize_3d_ops import crop_and_resize_3d
+import crop_and_resize_3d
 
 # Comment the following line to debug TF or libcuda issues
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
