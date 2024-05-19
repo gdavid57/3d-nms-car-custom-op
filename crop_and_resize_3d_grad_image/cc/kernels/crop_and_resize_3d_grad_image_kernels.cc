@@ -66,11 +66,11 @@ public:
                                 image_size.shape().DebugString()));
 
     auto image_size_vec = image_size.vec<int32>();
-    const int batch_size = internal::SubtleMustCopy(image_size_vec(0));
-    const int image_height = internal::SubtleMustCopy(image_size_vec(1));
-    const int image_width = internal::SubtleMustCopy(image_size_vec(2));
-    const int image_depth = internal::SubtleMustCopy(image_size_vec(3));
-    const int depth = internal::SubtleMustCopy(image_size_vec(4));
+    const int batch_size = bounds_check::SubtleMustCopy(image_size_vec(0));
+    const int image_height = bounds_check::SubtleMustCopy(image_size_vec(1));
+    const int image_width = bounds_check::SubtleMustCopy(image_size_vec(2));
+    const int image_depth = bounds_check::SubtleMustCopy(image_size_vec(3));
+    const int depth = bounds_check::SubtleMustCopy(image_size_vec(4));
     OP_REQUIRES(
         context, image_height > 0 && image_width > 0 && image_depth > 0,
         errors::InvalidArgument("image dimensions must be positive"));
