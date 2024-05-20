@@ -33,7 +33,7 @@ After the compilation process completes, the output package will be available in
 5. Install the generated .whl package using pip in an environment with TensorFlow 2.3 GPU:
 
 ```
-pip install artefact/<package-name>.whl
+pip install artefact/*.whl
 ```
 
 ## Test operations
