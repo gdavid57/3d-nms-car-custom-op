@@ -26,10 +26,6 @@ from setuptools.dist import Distribution
 __version__ = '0.1.0'
 REQUIRED_PACKAGES = [
     'tensorflow == 2.3.0',
-    'scikit-image == 0.16.2',
-    'scipy == 1.5.4',
-    'tqdm == 4.64.0',
-    'tifffile == 2020.9.3'
 ]
 project_name = 'tensorflow-nms-car-3d'
 
