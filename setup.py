@@ -24,9 +24,7 @@ from setuptools.dist import Distribution
 
 
 __version__ = '0.1.0'
-REQUIRED_PACKAGES = [
-    'tensorflow == 2.3.0',
-]
+REQUIRED_PACKAGES = []
 project_name = 'tensorflow-nms-car-3d'
 
 
