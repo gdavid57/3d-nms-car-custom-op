@@ -1,6 +1,6 @@
-# 3D Non Max Suppression and Crop And Resize Custom Operation for TensorFlow 2.3
+# 3D Non Max Suppression and Crop And Resize Custom Operation for TensorFlow 2.2
 
-This GitHub repository contains the code to compile the 3D Non Max Suppression and Crop And Resize custom operations for TensorFlow 2.3 GPU. It is based on the procedure for custom op of TensorFlow (see here for detailed informations: https://github.com/tensorflow/custom-op.git).
+This GitHub repository contains the code to compile the 3D Non Max Suppression and Crop And Resize custom operations for TensorFlow 2.2 GPU. It is based on the procedure for custom op of TensorFlow (see here for detailed informations: https://github.com/tensorflow/custom-op.git).
 
 ## Installation
 
@@ -26,11 +26,11 @@ chmod +rwx generate_whl.sh
 4. Run the Docker container with GPU support and mount the current working directory:
 
 ```
-docker run --gpus all -it -v ${PWD}:/working_dir -w /working_dir tensorflow/tensorflow:2.3.0-custom-op-gpu-ubuntu16 bash /working_dir/generate_whl.sh
+docker run --gpus all -it -v ${PWD}:/working_dir -w /working_dir tensorflow/tensorflow:2.2.0-custom-op-gpu-ubuntu16 bash /working_dir/generate_whl.sh
 ```
 After the compilation process completes, the output package will be available in the artefact/ directory.
 
-5. Install the generated .whl package using pip in an environment with TensorFlow 2.3 GPU:
+5. Install the generated .whl package using pip in an environment with TensorFlow 2.2 GPU:
 
 ```
 pip install artefact/*.whl
