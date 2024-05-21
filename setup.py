@@ -47,7 +47,7 @@ class BinaryDistribution(Distribution):
 setup(
     name=project_name,
     version=__version__,
-    description=('3D Non Max Suppression and Crop And Resize for TensorFlow 2.3.'),
+    description=('3D Non Max Suppression and Crop And Resize for TensorFlow 2.2.'),
     author='Gabriel David (PhD)',
     author_email='gabriel.david57@proton.me',
     # Contained modules and scripts.
